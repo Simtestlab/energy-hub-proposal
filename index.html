@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manapad Coastal Energy Hub</title>
+<meta name="description" content="Conceptual presentation: a solar + BESS coastal energy hub with plug-in charging for fishing boats at Manapad, Tamil Nadu.">
+<!-- Fonts are bundled locally (styles/fonts.css): no network needed. -->
+<link rel="stylesheet" href="styles/fonts.css">
+<link rel="stylesheet" href="styles/presentation.css">
+</head>
+<body>
+
+<main id="deck" aria-roledescription="presentation" aria-label="Manapad Coastal Energy Hub — conceptual proposal">
+
+  <!-- ============ PERSISTENT GEOGRAPHIC ANCHOR: the supplied satellite screenshot ============
+       One SVG, one coordinate system (image pixels). Every map scene re-uses it with a
+       different camera, image mode and set of overlay layers. -->
+  <div id="map-stage" aria-hidden="true">
+    <div id="map-kb">
+      <svg id="map" viewBox="215 62 1421 820" preserveAspectRatio="xMidYMid meet">
+        <defs id="map-defs"></defs>
+        <g id="cam">
+          <image id="img-original" href="assets/manapad-satellite.jpg" x="215" y="62" width="1421" height="820" preserveAspectRatio="none"/>
+          <g id="split-wrap">
+            <image id="img-clean" href="assets/manapad-satellite.jpg" x="215" y="62" width="1421" height="820" preserveAspectRatio="none"/>
+            <g id="map-layers"></g>
+          </g>
+          <g id="split-ui"></g>
+        </g>
+      </svg>
+      <div id="map-missing" hidden>
+        <strong>Satellite image not found</strong>
+        <span>Place the satellite image at <code>assets/manapad-satellite.jpg</code> (registered to the deck frame; see README). The overlays are traced to that exact image; do not substitute another map.</span>
+      </div>
+    </div>
+    <div id="map-grade"></div>
+  </div>
+  <p id="map-credit">Imagery © Google · satellite image supplied by project team</p>
+
+  <!-- ============ SCENES ============ -->
+
+  <!-- 1 -->
+  <section class="scene scene--map" data-key="opening" aria-label="Scene 1: Manapad">
+    <div class="title-block title-block--hero">
+      <p class="eyebrow" data-in="fade" style="--d:2.2s">Thoothukudi District · Tamil Nadu</p>
+      <h1 class="mega" data-in="rise" style="--d:2.6s">Manapad</h1>
+      <p class="tamil" data-in="fade" lang="ta" style="--d:3.3s">மணப்பாடு</p>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:4.2s">A proposed coastal energy hub · conceptual vision for discussion</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="scene scene--full" data-key="community" aria-label="Scene 2: A coastal community">
+    <div class="photo-slot" data-photo="community"></div>
+    <svg class="illus" data-illus="community" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: fishermen preparing FRP boats on the beach at dawn, with the settlement and church behind"></svg>
+    <div class="title-block title-block--low">
+      <h2 class="headline" data-in="rise" style="--d:1.4s">A coastal community</h2>
+      <p class="lede" data-in="fade" style="--d:2.1s">Every day starts at the shoreline: boats readied, nets loaded, engines fuelled.</p>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:2.6s">Illustration · replace with photographs from Manapad (see asset manifest)</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="scene scene--full" data-key="challenge" aria-label="Scene 3: The challenge">
+    <div class="title-block title-block--top">
+      <h2 class="headline" data-in="rise" style="--d:.3s">The challenge</h2>
+    </div>
+    <svg class="illus" data-illus="challenge" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Beach at dawn: fishermen queue at a fuel stall, carry fuel cans to the boats and pour fuel into outboards, while a boat leaves trailing exhaust"></svg>
+    <div class="beat-cap" aria-live="polite">
+      <span class="beat-n">01 / 03</span>
+      <b class="beat-t">Fuel bought and carried by hand</b>
+      <span class="beat-s">Before every trip</span>
+      <span class="beat-pips" aria-hidden="true"><i></i><i></i><i></i></span>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:1.2s">Local cost, fuel use and time figures are not yet measured · they form the pilot baseline survey</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="scene scene--full sys" data-key="retrofit" aria-label="Scene 4: The engine goes electric">
+    <div class="title-block title-block--top sys-title">
+      <p class="eyebrow" data-in="fade" style="--d:.2s">The boat · retrofit concept</p>
+      <h2 class="headline" data-in="rise" style="--d:.35s">The engine goes electric<span class="dot">.</span></h2>
+    </div>
+    <svg class="illus sys-svg rf-svg" data-illus="retrofit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Side view of an FRP fishing boat. Its kerosene outboard is lifted off and an electric outboard is fitted in its place. A battery pack is installed inside the hull and connected to the motor. The boat then runs with no exhaust."></svg>
+    <ol class="sys-stages rf-stages" aria-label="Retrofit sequence">
+      <li data-st="1">Remove</li><li data-st="2">Fit motor</li><li data-st="3">Fit battery</li><li data-st="4">Connect</li><li data-st="5">Go</li>
+    </ol>
+    <p class="scene-foot" data-in="fade" style="--d:1s">Retrofit concept · motor rating, battery capacity, mounting and wiring to be finalised in the feasibility study · no ratings implied</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="scene scene--map" data-key="site" aria-label="Scene 5: The proposed site">
+    <div class="title-block title-block--corner">
+      <p class="eyebrow" data-in="fade" style="--d:.4s">Manapad · actual satellite view</p>
+      <h2 class="headline" data-in="rise" style="--d:.6s">The proposed site</h2>
+    </div>
+    <ul class="legend" data-in="fade" style="--d:4.4s">
+      <li><i class="sw sw--solar"></i>Proposed solar + BESS zone</li>
+      <li><i class="sw sw--route"></i>Proposed boat access</li>
+    </ul>
+    <p class="scene-foot" data-in="fade" style="--d:4.8s">Zones traced from the project team's hand markings · not surveyed · boundaries indicative</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="scene scene--map" data-key="masterplan" aria-label="Scene 6: Conceptual masterplan">
+    <div class="title-block title-block--corner">
+      <p class="eyebrow" data-in="fade" style="--d:.3s">Conceptual masterplan</p>
+      <h2 class="headline" data-in="rise" style="--d:.5s">The energy hub</h2>
+    </div>
+    <ol class="mp-key" data-in="fade" style="--d:1s">
+      <li data-k="solar"><i class="sw sw--solar"></i>Solar PV area</li>
+      <li data-k="bess"><i class="sw sw--bess"></i>BESS + power conversion</li>
+      <li data-k="jetty"><i class="sw sw--jetty"></i>Jetty · ~250 boats plug in + charge</li>
+      <li data-k="swap"><i class="sw sw--swap"></i>Charger + switch room</li>
+      <li data-k="route"><i class="sw sw--route"></i>Boat access corridor</li>
+      <li data-k="access"><i class="sw sw--access"></i>Operational + maintenance access</li>
+    </ol>
+    <div class="mode-bar ctl-tech" role="group" aria-label="Masterplan display mode">
+      <button type="button" data-mode="original">Original</button>
+      <button type="button" data-mode="zones">Solar + BESS</button>
+      <button type="button" data-mode="route">Boat route</button>
+      <button type="button" data-mode="full" aria-pressed="true">Masterplan</button>
+      <button type="button" data-mode="eng">Engineering</button>
+      <button type="button" data-mode="split">Split</button>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:1.4s">Conceptual only · requires survey, approvals and engineering · no dimensions or capacities implied</p>
+  </section>
+
+  <!-- 7 -->
+  <section class="scene scene--map" data-key="solar" aria-label="Scene 7: Harness the sun">
+    <div class="title-block title-block--corner">
+      <h2 class="headline" data-in="rise" style="--d:.5s">Harness the sun</h2>
+      <p class="lede" data-in="fade" style="--d:1s">Tables placed only on dry sand, set back from the marked edge.</p>
+    </div>
+    <div class="photo-slot photo-slot--inset" data-photo="solar"></div>
+    <p class="scene-foot" data-in="fade" style="--d:1.4s">Layout is a concept until land suitability, solar resource, shading and flood exposure are assessed</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="scene scene--full sys" data-key="bess" aria-label="Scene 8: Store, manage, deliver">
+    <div class="title-block title-block--top sys-title">
+      <p class="eyebrow" data-in="fade" style="--d:.2s">Energy system · conceptual topology</p>
+      <h2 class="headline" data-in="rise" style="--d:.35s">Store<span class="dot">.</span> Manage<span class="dot">.</span> Deliver<span class="dot">.</span></h2>
+    </div>
+    <svg class="illus illus--diagram sys-svg" data-illus="bess" viewBox="0 20 1600 790" role="img" aria-label="Conceptual energy system, left to right: solar PV array, power conversion (PCS), two battery storage enclosures, distribution, chargers and jetty charging pedestals with a moored boat. An energy management system above monitors and controls the equipment. An optional grid connection links to distribution."></svg>
+    <ol class="sys-stages" aria-label="Sequence">
+      <li data-st="1">Generate</li><li data-st="2">Store</li><li data-st="3">Deliver</li><li data-st="4">Monitor</li>
+    </ol>
+    <ul class="sys-legend" aria-label="Legend">
+      <li><i class="lg-power"></i>Power flow</li>
+      <li><i class="lg-ctrl"></i>Monitoring + control</li>
+      <li><i class="lg-opt"></i>Optional grid link</li>
+    </ul>
+    <div class="photo-slot photo-slot--inset" data-photo="bess"></div>
+    <p class="scene-foot" data-in="fade" style="--d:1s">Conceptual topology · capacity, voltage, power ratings and grid interface to be engineered · no ratings implied</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="scene scene--full scene--ink" data-key="swap" aria-label="Scene 9: Plug in, charge, go">
+    <div class="title-block title-block--top">
+      <h2 class="headline" data-in="rise" style="--d:.3s">Plug in. Charge. Go.</h2>
+    </div>
+    <svg class="illus illus--diagram" data-illus="swap" viewBox="0 0 1600 570" role="img" aria-label="Boats charging at jetty pedestals, fed from the charger room"></svg>
+    <ol class="steps" aria-label="Charging steps">
+      <li data-s="0">Boat berths at the jetty</li>
+      <li data-s="1">Plug in · session starts, metered</li>
+      <li data-s="2">Charges at the berth</li>
+      <li data-s="3">Unplug · cable stowed</li>
+      <li data-s="4">Boat departs</li>
+    </ol>
+    <div class="photo-slot photo-slot--inset" data-photo="charging"></div>
+    <p class="scene-foot" data-in="fade" style="--d:1s">Charge time depends on charger power and onboard pack · connector standard, charger rating and scheduling not yet defined</p>
+  </section>
+
+  <!-- 10 -->
+  <section class="scene scene--map" data-key="route" aria-label="Scene 10: Ready for the sea">
+    <div class="title-block title-block--corner">
+      <h2 class="headline" data-in="rise" style="--d:.5s">Ready for the sea</h2>
+      <p class="lede" data-in="fade" style="--d:1s">In from the sea through the channel, to a charging berth at the jetty, and back out.</p>
+    </div>
+    <!-- Scene 9 animation overlays (hidden unless the sequence is showing them) -->
+    <svg class="chg-leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"/><circle cx="0" cy="0" r="9"/></svg>
+    <div class="chg-callout" aria-hidden="true"><svg viewBox="0 0 300 300"></svg><p class="chg-status">Plug-in charging</p></div>
+    <div class="fish-layer" aria-hidden="true"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"></svg><p class="fish-tag">Open sea · fishing · illustrative</p></div>
+    <p class="scene-foot" data-in="fade" style="--d:1.4s">Route is conceptual · depth, tides, bar movement, obstructions and navigation safety not yet verified</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="scene scene--map" data-key="beyond" aria-label="Scene 11: Beyond the boat">
+    <div class="title-block title-block--corner">
+      <h2 class="headline" data-in="rise" style="--d:.5s">Beyond the boat</h2>
+      <ul class="scope-key" data-in="fade" style="--d:1.2s">
+        <li><i class="sw sw--solid"></i>Initial pilot scope</li>
+        <li><i class="sw sw--dashed"></i>Possible later services</li>
+      </ul>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:1.6s">Later services only after a load assessment and community consultation · locations shown are not proposals</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="scene scene--map" data-key="plan" aria-label="Scene 12: From vision to reality">
+    <div class="title-block title-block--corner">
+      <h2 class="headline" data-in="rise" style="--d:.4s">From vision to reality</h2>
+    </div>
+    <ol class="timeline" aria-label="Implementation stages">
+      <li>Site survey</li>
+      <li>Community consultation</li>
+      <li>Energy-demand assessment</li>
+      <li>Engineering design</li>
+      <li>Approvals + site preparation</li>
+      <li>Infrastructure deployment</li>
+      <li>Pilot operation</li>
+      <li>Performance validation</li>
+    </ol>
+    <p class="scene-foot" data-in="fade" style="--d:1s">Sequence only · no dates, costs or schedules committed</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="scene scene--full scene--ink" data-key="impact" aria-label="Scene 13: Measure what matters">
+    <div class="title-block title-block--top">
+      <h2 class="headline" data-in="rise" style="--d:.3s">Measure what matters</h2>
+      <p class="lede" data-in="fade" style="--d:.7s">The pilot dashboard. Empty until real data arrives.</p>
+    </div>
+    <div class="metrics">
+      <article class="metric"><h3>Participating boats</h3><p class="val">—</p><p class="unit">boats enrolled</p></article>
+      <article class="metric"><h3>Energy supplied</h3><p class="val">—</p><p class="unit">kWh per month</p></article>
+      <article class="metric"><h3>Charging time</h3><p class="val">—</p><p class="unit">hours per boat</p></article>
+      <article class="metric"><h3>Cost per trip</h3><p class="val">—</p><p class="unit">₹ per trip, vs fuel baseline</p></article>
+      <article class="metric"><h3>Solar utilisation</h3><p class="val">—</p><p class="unit">% of demand met by PV</p></article>
+      <article class="metric"><h3>Infrastructure uptime</h3><p class="val">—</p><p class="unit">% of scheduled hours</p></article>
+      <article class="metric"><h3>Local jobs</h3><p class="val">—</p><p class="unit">roles held locally</p></article>
+      <article class="metric"><h3>User satisfaction</h3><p class="val">—</p><p class="unit">survey score</p></article>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:3.2s">No values shown · baseline and targets to be agreed with the community before the pilot starts</p>
+  </section>
+
+  <!-- 14 -->
+  <section class="scene scene--map" data-key="future" aria-label="Scene 14: The future vision">
+    <svg class="illus tn-map" data-illus="tn" viewBox="0 0 520 680" role="img" aria-label="Simplified Tamil Nadu coastline with Manapad marked as the proposed pilot"></svg>
+    <div class="title-block title-block--close">
+      <h2 class="headline headline--close" data-in="rise" style="--d:4.6s">Start at Manapad.</h2>
+      <p class="headline headline--close headline--sub" data-in="rise" style="--d:5.4s">Build a model for coastal communities.</p>
+    </div>
+    <p class="scene-foot" data-in="fade" style="--d:6s">Simplified outline, not to scale · green markers are illustrative · no other sites identified or committed</p>
+  </section>
+
+  <!-- ============ CHROME ============ -->
+  <div id="curtain" aria-hidden="true"></div>
+
+  <nav id="controls" aria-label="Presentation controls">
+    <button type="button" id="btn-prev" aria-label="Previous scene"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div id="progress" aria-hidden="true"><span id="progress-fill"></span></div>
+    <span id="counter" aria-live="polite">1 / 14</span>
+    <button type="button" id="btn-next" aria-label="Next scene"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <span class="sep"></span>
+    <button type="button" id="btn-play" aria-label="Start autoplay" aria-pressed="false"><svg viewBox="0 0 24 24"><path class="i-play" d="M8 5l11 7-11 7z"/><path class="i-pause" d="M8 5v14M16 5v14"/></svg></button>
+    <button type="button" id="btn-overview" aria-label="Scene overview (O)"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></button>
+    <button type="button" id="btn-notes" aria-label="Presenter notes (N)"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6zM9 9h6M9 13h6M9 17h3"/></svg></button>
+    <button type="button" id="btn-fs" aria-label="Enter full screen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </nav>
+
+  <aside id="notes" hidden aria-label="Presenter notes">
+    <h2>Presenter notes</h2>
+    <div id="notes-body"></div>
+  </aside>
+
+  <div id="overview" hidden role="dialog" aria-label="Scene overview">
+    <ol id="overview-list"></ol>
+  </div>
+
+  <aside id="devpanel" hidden aria-label="Developer controls">
+    <h2>Developer controls <kbd>D</kbd></h2>
+    <button type="button" data-dev="restart">Restart scene <kbd>R</kbd></button>
+    <button type="button" data-dev="clean">Clean image (hide hand marks) <kbd>C</kbd></button>
+    <button type="button" data-dev="overlays">Toggle all overlays <kbd>V</kbd></button>
+    <button type="button" data-dev="eng">Engineering annotations <kbd>E</kbd></button>
+    <button type="button" data-dev="pause">Pause all animation <kbd>K</kbd></button>
+    <button type="button" data-dev="motion">Reduced motion</button>
+    <button type="button" data-dev="present">Presentation mode (hide tech controls) <kbd>P</kbd></button>
+  </aside>
+
+  <p id="toast" role="status" aria-live="polite"></p>
+</main>
+
+<noscript><p style="color:#fff;padding:2rem">This presentation needs JavaScript enabled.</p></noscript>
+
+<script src="scripts/site-geometry.js"></script>
+<script src="scripts/animations.js"></script>
+<script src="scripts/presentation.js"></script>
+</body>
+</html>
