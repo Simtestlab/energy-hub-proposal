@@ -4,6 +4,8 @@ A 13-scene, full-screen, animated presentation of a **conceptual** solar + BESS 
 
 Nothing in the deck claims the site is surveyed, designed or approved. No capacities, ratings, costs, dates or measured results are shown.
 
+**Live:** <https://prabhagaran.github.io/manapad-presentation/> — published from `main` via GitHub Pages; any push to `main` redeploys it.
+
 ## Run it
 
 No build step, no server, no internet.
@@ -18,17 +20,30 @@ If your browser blocks local files for any reason, serve the folder instead: `py
 
 ```
 manapad-presentation/
-├── index.html                    scene markup and all on-screen text
-├── styles/presentation.css       design system, layout, motion
-├── styles/fonts.css              bundled fonts (OFL), embedded, work offline
-├── scripts/site-geometry.js      traced zones, solar layout, camera presets (image px)
-├── scripts/animations.js         SVG illustrations, map layers, scene animations
-├── scripts/presentation.js       engine: navigation, controls, autoplay, modes, notes
-├── assets/manapad-satellite.jpg        satellite background (replacement image, registered to the deck frame)
-├── assets/source/manapad-satellite-original-screenshot.png  the untouched 1842 × 910 original
+├── index.html                       scene markup and all on-screen text
 ├── README.md
-└── TECHNICAL_NOTES.md            assumptions, pending assessments, metrics, validation
+├── .gitignore
+├── .nojekyll                        tells GitHub Pages to serve the files as-is
+├── docs/
+│   └── TECHNICAL_NOTES.md           assumptions, pending assessments, metrics, validation
+├── styles/
+│   ├── presentation.css             design system, layout, motion
+│   └── fonts.css                    bundled fonts (OFL), embedded, work offline
+├── scripts/
+│   ├── site-geometry.js             traced zones, solar layout, camera presets (image px)
+│   ├── animations.js                SVG illustrations, map layers, scene animations
+│   └── presentation.js              engine: navigation, controls, autoplay, modes, notes
+└── assets/
+    ├── manapad-satellite.jpg        the only image the deck loads (registered to the deck frame)
+    └── source/                      working originals, not loaded at runtime
+        ├── manapad-satellite-new-original.png           original of the current image
+        ├── manapad-satellite-original-screenshot.png    untouched 1842 × 910 screenshot
+        ├── manapad-satellite-cropped-with-labels.png    intermediate crops
+        ├── manapad-satellite-clean-with-labels.png
+        └── previous-manapad-satellite*.png              superseded image versions
 ```
+
+Everything the deck loads sits at the repo root or under `assets/`, `scripts/` and `styles/`, so the folder can be opened directly or served unchanged. `assets/source/` is kept for provenance and can be deleted without affecting the deck.
 
 ## Controls
 
@@ -78,7 +93,7 @@ A small mode bar under the map: **Original** (the screenshot with hand markings)
 ## Replacing or updating the satellite image
 
 The overlays are traced to **this exact screenshot**. All coordinates are pixels on the original 1842 × 910 screenshot. The displayed image is a crop of it (x 215–1636, y 62–882) that removes the Google Maps search bar, sidebar, controls and footer; it is placed at (215, 62) inside the same coordinate system, so nothing had to be re-traced.
-- New screenshot, same framing and size: crop it the same way, save as `assets/manapad-satellite.png`, and regenerate the clean copy (see TECHNICAL_NOTES.md › Tracing method).
+- New screenshot, same framing and size: crop it the same way, save as `assets/manapad-satellite.jpg`, and regenerate the clean copy (see [docs/TECHNICAL_NOTES.md](docs/TECHNICAL_NOTES.md) › Tracing method).
 - Different framing: re-trace the zones. Update `image` and `view` in `site-geometry.js` and the `viewBox` / `<image>` attributes in `index.html`.
 If the image file is missing, the deck shows a clearly labelled placeholder instead of a substitute map.
 
@@ -86,9 +101,8 @@ If the image file is missing, the deck shows a clearly labelled placeholder inst
 
 | File | Status | Used in | Notes |
 |---|---|---|---|
-| `assets/manapad-satellite.jpg` | **Included** (replacement image supplied by project team) | all map scenes | Registered to the deck's coordinate frame by feature matching (affine, median residual 0.7 px), so every overlay lines up. Original file in `assets/source/manapad-satellite-new-original.png`; earlier screenshot versions in `assets/source/previous-*`. |
-| (previous) `assets/manapad-satellite.png` | **Included** (supplied, cropped, labels removed) | 1, 4, 5, 6, 9, 10, 11, 13 | Supplied screenshot with the Maps interface cropped out and Google place labels, pins and road names removed (texture fill). Untouched original and the labelled crops are in `assets/source/`. | Imagery ©2026 Airbus, Maxar Technologies; Map data ©2026 Google — credit shown on every map scene. Check Google Maps attribution terms before public distribution. |
-| `assets/manapad-satellite-clean.png` | **Included** (derived, labels removed) | Clean mode, scenes 1, 6, 9, 10, 13 | Hand-marking strokes removed by inpainting. Pixels under the old strokes are interpolated, not imagery. |
+| `assets/manapad-satellite.jpg` | **Included** — the only image the deck loads | all map scenes | Registered to the deck's coordinate frame by feature matching (affine, median residual 0.7 px), so every overlay lines up. Imagery ©2026 Airbus, Maxar Technologies; Map data ©2026 Google — credit shown on every map scene. Check Google Maps attribution terms before public distribution. |
+| `assets/source/*.png` | **Included**, not loaded at runtime | — | Provenance only: the original of the current image, the untouched 1842 × 910 screenshot, the intermediate labelled crops, and the superseded `previous-*` versions. Safe to delete. |
 | `styles/fonts.css` | **Included** | All | Big Shoulders Display, IBM Plex Sans, IBM Plex Mono, Noto Sans Tamil — SIL Open Font License 1.1, from @fontsource 5.3.0. |
 | All illustrations | **Included** (original SVG, generated in code) | 2, 3, 7, 8, 13 | FRP boats, figures, BESS diagram, berth charging sequence, Tamil Nadu outline. |
 | `assets/fishing-community.jpg` | Optional, not supplied | 2 (replaces illustration) | 16:9, ≥ 2400 px wide. |

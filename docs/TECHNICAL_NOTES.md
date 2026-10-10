@@ -4,7 +4,7 @@ Status: **conceptual vision for discussion.** No survey, design, approval or loa
 
 ## 1. Tracing method (how the overlays were made)
 
-Source: `assets/manapad-satellite.png`, 1842 × 910 px, supplied by the project team. All overlay coordinates are image pixels; the SVG uses `viewBox="0 0 1842 910"` with `preserveAspectRatio="xMidYMid meet"`, so overlays and image share one coordinate system and cannot drift.
+Source: `assets/source/manapad-satellite-original-screenshot.png`, 1842 × 910 px, supplied by the project team. All overlay coordinates are image pixels; the SVG uses `viewBox="0 0 1842 910"` with `preserveAspectRatio="xMidYMid meet"`, so overlays and image share one coordinate system and cannot drift.
 
 1. **Segmentation.** Pixels of the hand strokes were isolated by colour (high-saturation yellow/olive and green, low blue), excluding the Google Maps UI margins.
 2. **Yellow zone.** The stroke was morphologically closed, filled, and eroded by ~4 px (half the stroke width) to take the stroke centreline; the contour was simplified (Douglas–Peucker, 2.5 px) to a 37-point closed polygon.
@@ -12,7 +12,7 @@ Source: `assets/manapad-satellite.png`, 1842 × 910 px, supplied by the project 
 4. **Verification.** Both traces were drawn back onto the screenshot and inspected; in the browser, overlay points were checked against the image rectangle at 1920×1080, 1366×768, 1440×900, 1280×1024, 2560×1080 and 800×600: **0.0 px offset** at every size.
 5. **Interface crop.** The displayed image is the region x 215–1636, y 62–882 of the original (1421 × 820, aspect 1.733, close to 16:9). This removes the Maps search bar, category chips, sidebar, zoom and Street View controls and the footer bar. The crop is placed at (215, 62) in the original coordinate system (`viewBox="215 62 1421 820"`), so all traced coordinates are unchanged. Imagery credit is kept in the deck footer on every map scene.
 6. **Map labels removed.** Google place labels (JBF Seafoods, churches, fish market, beach, river and road names) and their pins were detected by their dark text outlines and pin shapes, then filled with nearby real texture (exemplar copy + Poisson blending; a few edge areas use simple inpainting). The hand-drawn markings were excluded as copy sources. The "Google Maps" logo and faint "© Google" watermarks were left in place, and the imagery credit stays in every map scene's footer. Labelled versions are kept in `assets/source/`.
-7. **Clean image.** The stroke masks (dilated ~5 px) were inpainted (OpenCV Telea) to produce `manapad-satellite-clean.png`. Pixels in those strips are interpolated, not real imagery.
+7. **Clean image.** The stroke masks (dilated ~5 px) were inpainted (OpenCV Telea) to produce the clean copy, kept as `assets/source/previous-manapad-satellite-clean.png`. Pixels in those strips are interpolated, not real imagery.
 
 Trace accuracy is limited by the hand drawing itself (stroke ~8–12 px wide). At the screenshot's scale bar (~100 px ≈ 100 m) that is roughly ±5 m of ambiguity before any survey error.
 
@@ -117,5 +117,5 @@ Tested means exercised by an automated script and/or inspected screenshot, not j
 ## 6. Known limitations
 
 - The Google Maps interface is cropped out and place labels/pins are removed. Filled areas are reconstructed texture, not imagery; the largest (around the former St Antony's / Manapad Beach Rd labels) look slightly soft when zoomed. The "Google Maps" logo and "© Google" watermarks remain for attribution.
-- Illustrations are honest conceptual drawings, not photorealistic renders or a 3D reconstruction. Replace with consented local photographs where available (see README › Asset manifest).
+- Illustrations are honest conceptual drawings, not photorealistic renders or a 3D reconstruction. Replace with consented local photographs where available (see [../README.md](../README.md) › Asset manifest).
 - Labels inside the map scale with the camera; at very small window sizes (< 800 px wide) the smallest map annotations become hard to read.

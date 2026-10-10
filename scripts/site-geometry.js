@@ -1,8 +1,8 @@
-/* Manapad site geometry — traced from assets/manapad-satellite.png (1842 x 910 px).
+/* Manapad site geometry — traced from assets/source/manapad-satellite-original-screenshot.png (1842 x 910 px).
    All coordinates are IMAGE PIXELS. The SVG overlay uses viewBox="0 0 1842 910",
    so these points stay locked to the image at any screen size.
    Tracing method: colour segmentation of the hand-drawn strokes, centreline
-   extraction, polygon simplification (tolerance ~2.5 px). See TECHNICAL_NOTES.md. */
+   extraction, polygon simplification (tolerance ~2.5 px). See docs/TECHNICAL_NOTES.md. */
 window.SITE = {
   image: { w: 1842, h: 910 },          // original screenshot size (coordinate system)
   // Visible crop: the Maps search bar, sidebar, controls and footer are removed.
