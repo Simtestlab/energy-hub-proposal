@@ -484,3 +484,6 @@ kbd { font: 500 11px var(--f-mono); color: var(--muted); }
   .legend, .mp-key { top: auto; bottom: 110px; font-size: 11px; }
   #progress { display: none; }
 }
+
+/* Footer disclaimers and imagery credit hidden from the slides (caveats remain in the presenter notes, N key) */
+.scene-foot, #map-credit { display: none !important; }

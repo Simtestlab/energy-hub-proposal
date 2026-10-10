@@ -55,8 +55,6 @@
     { key: "plan", title: "From vision to reality", dur: 22,
       map: { cam: "site", img: "original", layers: [], grade: "g-dim", timeline: true },
       notes: ["Eight stages, in order. No dates, costs or schedules are committed here.", "The map evolves with the stages: from the unmarked site, through design, to a pilot hub."] },
-    { key: "impact", title: "Measure what matters", dur: 10, map: null,
-      notes: ["The pilot is judged by these indicators. All values are empty until measured; baseline and targets are agreed with the community before the pilot starts."] },
     { key: "future", title: "Start at Manapad", dur: 14,
       map: { cam: "full", img: "clean", layers: ["siteQuiet", "route", "hubPin"], grade: "", finale: true },
       notes: ["Start with one site, measure honestly, then decide whether the model fits other coastal communities.", "Hollow markers are illustrative. No other sites have been identified or committed."] }

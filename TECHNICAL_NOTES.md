@@ -53,7 +53,7 @@ The map background is now the replacement satellite image supplied by the projec
 - Jetty: berth dimensions and spacing for ~250 boats, channel width left for navigation, mooring and fendering, pontoon vs fixed structure, shore-power safety at berths
 - Environmental impact (dune, mangrove, fisheries habitat) and community acceptance
 
-## 4. Pilot metrics (scene 12 — all empty until measured)
+## 4. Pilot metrics (no longer shown in the deck; kept for the pilot plan — all empty until measured)
 
 | Metric | Unit | Baseline to record before the pilot |
 |---|---|---|
@@ -74,7 +74,7 @@ Tested means exercised by an automated script and/or inspected screenshot, not j
 
 | # | Check | Result |
 |---|---|---|
-| 1 | All 14 scenes load and render | ✅ Screenshot of every scene at 1600×900 |
+| 1 | All 13 scenes load and render | ✅ Screenshot of every scene at 1600×900 |
 | 2 | Next/previous buttons, overview jump | ✅ |
 | 3 | Keyboard: → ← Space Home End, no wrap at ends | ✅ |
 | 4 | Rapid presses queue correctly (3 presses = 3 scenes), no double transitions | ✅ |

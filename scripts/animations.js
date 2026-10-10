@@ -925,6 +925,7 @@
     const [mx, my] = P([78.06, 8.38]);
     el("circle", { cx: mx, cy: my, r: 9, class: "tn-pulse" }, svg);
     el("circle", { cx: mx, cy: my, r: 7, class: "tn-pilot" }, svg);
+    el("text", { x: mx - 14, y: my - 14, class: "tn-pilot-t", "text-anchor": "end", text: "Manapad" }, svg);
     el("text", { x: 20, y: 660, class: "tn-note", text: "◯ potential future locations · illustrative only" }, svg);
   };
 
@@ -935,7 +936,7 @@
 
   FX.challenge = {
     BEATS: [
-      { spot: [700, 610], t: "Fuel bought and carried by hand", s: "Before every trip" },
+      { spot: [700, 610], t: "Every trip runs on kerosene", s: "Fuel bought before each trip" },
       { spot: [1290, 400], t: "A recurring cost every trip", s: "Fuel spend rises with distance and price" },
       { spot: [320, 570], t: "Time lost replenishing energy", s: "Queueing, carrying, refuelling" }
     ],

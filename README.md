@@ -1,6 +1,6 @@
 # Manapad Coastal Energy Hub — cinematic HTML presentation
 
-A 14-scene, full-screen, animated presentation of a **conceptual** solar + BESS coastal energy hub where ~250 fishing boats plug in and charge at a jetty at Manapad, Thoothukudi District, Tamil Nadu. The team's own Google Maps satellite screenshot is the geographic anchor for every map scene; the hand-drawn yellow (solar + BESS) and green (boat access) markings are traced into SVG overlays that stay locked to the image at any screen size.
+A 13-scene, full-screen, animated presentation of a **conceptual** solar + BESS coastal energy hub where ~250 fishing boats plug in and charge at a jetty at Manapad, Thoothukudi District, Tamil Nadu. The team's own Google Maps satellite screenshot is the geographic anchor for every map scene; the hand-drawn yellow (solar + BESS) and green (boat access) markings are traced into SVG overlays that stay locked to the image at any screen size.
 
 Nothing in the deck claims the site is surveyed, designed or approved. No capacities, ratings, costs, dates or measured results are shown.
 
@@ -64,7 +64,7 @@ A small mode bar under the map: **Original** (the screenshot with hand markings)
 
 ## Scenes
 
-1 Manapad · 2 A coastal community · 3 The challenge · 4 The engine goes electric · 5 The proposed site · 6 Conceptual masterplan · 7 Harness the sun · 8 Store. Manage. Deliver. · 9 Plug in. Charge. Go. · 10 Ready for the sea · 11 Beyond the boat · 12 From vision to reality · 13 Measure what matters · 14 Start at Manapad.
+1 Manapad · 2 A coastal community · 3 The challenge · 4 The engine goes electric · 5 The proposed site · 6 Conceptual masterplan · 7 Harness the sun · 8 Store. Manage. Deliver. · 9 Plug in. Charge. Go. · 10 Ready for the sea · 11 Beyond the boat · 12 From vision to reality · 13 Start at Manapad.
 
 ## Editing
 
