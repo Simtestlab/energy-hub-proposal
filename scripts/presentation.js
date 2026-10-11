@@ -1,4 +1,4 @@
-/* Manapad Coastal Energy Hub — presentation engine
+/* Fishermen Energy Hub — presentation engine
    Scene list, navigation, map-stage state, controls, autoplay, notes, overview.
    Scene content lives in index.html; illustrations + per-scene motion in animations.js. */
 (function () {
@@ -24,9 +24,9 @@
      SCENES. map: null = full-bleed illustrated scene; otherwise map-stage state.
      dur = autoplay seconds. notes = presenter notes (caveats live here).        */
   const SCENES = [
-    { key: "opening", title: "Manapad", dur: 11,
+    { key: "opening", title: "Fishermen Energy Hub", dur: 11,
       map: { cam: "coastNear", img: "clean", layers: [], grade: "g-sun", kb: true },
-      notes: ["Manapad, a fishing settlement on the Thoothukudi coast. This is the team's own satellite screenshot, used as the anchor for every map scene.", "Everything that follows is a concept for discussion. Nothing has been surveyed, designed or approved."] },
+      notes: ["A fishermen's energy hub for the welfare of the fishing community. The pilot site is Manapad, a fishing settlement on the Thoothukudi coast. This is the team's own satellite screenshot, used as the anchor for every map scene.", "Everything that follows is a concept for discussion. Nothing has been surveyed, designed or approved."] },
     { key: "community", title: "A coastal community", dur: 10, map: null,
       notes: ["Start with people, not equipment. The fishing day begins on the beach: boats prepared, nets loaded, engines fuelled.", "Illustration only. Replace with consented photographs from Manapad before external use."] },
     { key: "challenge", title: "The challenge", dur: 12, map: null,

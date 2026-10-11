@@ -1,4 +1,4 @@
-/* Manapad Coastal Energy Hub — illustrations, map overlays and scene animations.
+/* Fishermen Energy Hub — illustrations, map overlays and scene animations.
    - Map overlay layers are built from window.SITE (image-pixel coordinates).
    - Illustrations are original SVG, generated from small reusable helpers.
    - Each scene exposes enter(ctx)/exit(ctx). ctx tracks timers and rAF so nothing

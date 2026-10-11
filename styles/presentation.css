@@ -206,6 +206,7 @@ button { font: inherit; color: inherit; }
 
 .eyebrow { margin: 0; font: 500 clamp(11px, .85vw, 15px)/1.2 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--sand); }
 .mega { margin: 0; font: 800 clamp(4.5rem, 15vw, 15rem)/.82 var(--f-display); letter-spacing: .01em; text-transform: uppercase; color: var(--paper); text-shadow: 0 4px 40px rgba(7,18,28,.45); }
+.mega--title { font-size: clamp(3.2rem, 10vw, 10rem); }
 .tamil { margin: 0; font: 500 clamp(1.4rem, 2.6vw, 2.6rem)/1.2 var(--f-tamil); color: var(--sand); }
 .headline { margin: 0; font: 700 clamp(2.4rem, 5.4vw, 5.4rem)/.92 var(--f-display); letter-spacing: .015em; text-transform: uppercase; text-wrap: balance; text-shadow: 0 2px 24px rgba(7,18,28,.55); }
 .headline--sub { font-weight: 500; font-size: clamp(1.6rem, 3vw, 3rem); color: var(--sand); }
